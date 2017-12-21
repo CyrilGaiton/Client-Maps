@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom"
+        android:id="@+id/nom"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Prénom"
+        android:id="@+id/prenom"
+        android:layout_below="@id/nom"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="adresse mail"
+        android:id="@+id/email"
+        android:layout_below="@id/prenom"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mot de Passe"
+        android:id="@+id/password"
+        android:layout_below="@id/email"
+        android:inputType="textPassword"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirmer le Mot de Passe"
+        android:id="@+id/password_confirm"
+        android:layout_below="@id/password"
+        android:inputType="textPassword"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S'INSCRIRE"
+        android:id="@+id/b_inscription"
+        android:layout_below="@id/password_confirm"
+        android:onClick="inscription"
+        android:layout_centerInParent="true"
+        />
+
+
+</RelativeLayout>

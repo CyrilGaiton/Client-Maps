@@ -1,0 +1,69 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lieu de Départ"
+        android:id="@+id/e_depart"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lieu d'Arrivée"
+        android:id="@+id/e_arrivee"
+        android:layout_below="@id/e_depart"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Distance"
+        android:id="@+id/distance"
+        android:layout_below="@id/e_arrivee"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Duree(minutes)"
+        android:id="@+id/duree"
+        android:layout_below="@id/distance"/>
+
+
+    <TimePicker
+        android:id="@+id/simpleTimePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/duree"
+        android:timePickerMode="spinner">
+
+    </TimePicker>
+
+    <DatePicker
+        android:id="@+id/simpleDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/simpleTimePicker"
+        android:datePickerMode="spinner">
+
+    </DatePicker>
+
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bouton_confirmer"
+        android:text="Valider"
+        android:onClick="Enregistrer"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"/>
+
+
+
+
+</RelativeLayout>

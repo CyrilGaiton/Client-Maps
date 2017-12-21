@@ -1,0 +1,47 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:orientation="vertical">
+
+
+
+<Button
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:text="CREER"
+    android:id="@+id/bouton"
+    android:onClick="create"
+    android:layout_centerInParent="true"
+    android:layout_below="@id/boutonrejoindre"
+    />
+
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/boutonrejoindre"
+    android:onClick="join"
+    android:text="REJOINDRE"
+    android:layout_centerInParent="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bouton_evenements"
+        android:text="MES EVENEMENTS"
+        android:layout_below="@id/bouton"
+        android:layout_centerInParent="true"
+        android:onClick="join"/>
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/boutonmesstats"
+    android:text="MES STATS"
+    android:layout_centerInParent="true"
+    android:layout_below="@id/bouton_evenements"/>
+
+
+
+</RelativeLayout>
