@@ -102,7 +102,7 @@ public class Inscrire extends Activity {
         @Override
         protected void onPostExecute(Void res) {
 
-            Intent intent = new Intent(Inscrire.this, Profile.class);
+            Intent intent = new Intent(Inscrire.this, Account.class);
             intent.putExtra("mail_user", champ_mail.getText().toString());
             startActivity(intent);
 

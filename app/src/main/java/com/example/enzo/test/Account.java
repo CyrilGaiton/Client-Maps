@@ -41,7 +41,7 @@ public class Account extends Activity {
 
     public void join(View v){
 
-        Intent intent = new Intent(Account.this, Rejoindre.class);
+        Intent intent = new Intent(Account.this, MyRides.class);
         intent.putExtra("mail_user", mail_user );
         startActivity(intent);
 

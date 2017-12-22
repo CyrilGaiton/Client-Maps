@@ -23,7 +23,7 @@ public class Connection {
         if (instance == null) {
 
             try {
-                client = new Socket("192.168.0.14", 5700);
+                client = new Socket("10.42.6.131", 5700);
             } catch (IOException e) {
                 e.printStackTrace();
             }

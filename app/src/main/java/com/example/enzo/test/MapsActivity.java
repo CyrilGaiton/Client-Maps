@@ -64,6 +64,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Task<LocationSettingsResponse> task;
 
     private Intent intent;
+    private String mail_user;
+    private int idRide;
 
     private Polyline activeLine;
     private List <Marker> markers = new ArrayList<>();
@@ -75,6 +77,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        intent = getIntent();
+        Bundle bd = intent.getExtras();
+        if (bd!=null){
+            mail_user = (String) bd.get("mail_user");
+            idRide = (Integer) bd.get("idRide");
+        }
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -110,6 +121,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         };
+
+
     }
 
     @Override

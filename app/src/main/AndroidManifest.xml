@@ -28,15 +28,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Profile"/>
         <activity android:name=".Inscrire"/>
-        <activity android:name=".SignUpDatabase"/>
         <activity android:name=".Account"/>
         <activity android:name=".Creer"/>
         <activity android:name=".MapsActivity"/>
         <activity android:name=".Rejoindre"/>
         <activity android:name=".MapCreate"/>
         <activity android:name=".AutorisedEmails"/>
+        <activity android:name=".MyRides" />
 
 
     </application>
