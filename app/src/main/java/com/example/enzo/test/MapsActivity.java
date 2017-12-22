@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.Icon;
 import android.location.Location;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -52,6 +53,8 @@ import com.google.maps.android.ui.IconGenerator;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import fr.masterdapm.ancyen.model.Ride;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -117,7 +120,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     double alt = location.getAltitude();
                     progressBar.setProgress((int) alt);
                     LatLng pos = new LatLng(location.getLatitude(), location.getLongitude());
-                    // TODO: Stocker les positions dans BD.
+                    new ASyncConnection().execute(pos);
                 }
             }
         };
@@ -264,4 +267,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void showAlt(View view) {
         Toast.makeText(MapsActivity.this, Integer.toString(progressBar.getProgress()), Toast.LENGTH_LONG).show();
     }
+
+
+
+    private class ASyncConnection extends AsyncTask<LatLng, Void, Void> {
+
+
+        @Override
+        protected Void doInBackground(LatLng... pos) {
+
+            Connection connection = Connection.getInstance();
+
+            connection.oos.writeObject("updateStatistics");
+            connection.oos.writeObject(mail_user);
+
+            try {
+                connection.client.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return rides;
+        }
+
+
+
+        @Override
+        protected void onPostExecute(final List<Ride> rides) {
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+
+        }
+
+}
+
 }
